@@ -6,7 +6,7 @@
     $desc = "Bot Developer | Software Developer | Graphic Designer";
 
     // Theme (light or dark)
-    $theme = "light";
+    $theme = "dark";
 
     // Domain (with trailing slash)
     $domain = "https://izmystic.dev";
