@@ -3,7 +3,7 @@
 
 ## Preview
 Dark Mode
-![](https://cdn.discordapp.com/attachments/817345362112151553/917238896385982565/unknown.png)
+![](https://cdn.discordapp.com/attachments/817345362112151553/917241314704232499/unknown.png)
 
 Light Mode
-![](https://cdn.discordapp.com/attachments/817345362112151553/917239078259421184/unknown.png)
+![](https://cdn.discordapp.com/attachments/817345362112151553/917241420312637460/unknown.png)
