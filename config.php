@@ -20,12 +20,16 @@
     // Links
     $links = [
         "Discord" => [ // Button Label
-            "link" => "https://discord.gg/idfk", // Button Link
+            "link" => "https://izmystic.dev/discord", // Button Link
             "icon" => "fab fa-discord" // Button Icon
         ],
         "Github" => [
             "link" => "https://github.com/izMystic",
             "icon" => "fab fa-github"
+        ],
+        "Twitter" => [
+            "link" => "https://twitter.com/iz_mystic",
+            "icon" => "fab fa-twitter"
         ],
     ];
 
