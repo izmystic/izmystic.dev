@@ -9,7 +9,7 @@
     $theme = "dark";
 
     // Domain (with trailing slash)
-    $domain = "https://izmystic.dev";
+    $domain = "https://izmystic.dev/";
 
     // Color (hex)
     $color = "#ff00ff";
