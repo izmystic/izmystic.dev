@@ -1,0 +1,8 @@
+#main {
+    margin-top: 6rem;
+}
+
+#card {
+    box-shadow: 0 0 10px black;
+    width: fit-content;
+}
