@@ -39,7 +39,7 @@
                         <h5 class="card-title"><?php echo $name ?></h5>
                         <p class="card-text"><?php echo $desc ?></p>
                         <?php foreach ($links as $name => $button) { ?>
-                            <a href="<?php echo $button['link'] ?>" class="btn btn-color text-<?php echo $txtcolor ?>"><i class="<?php echo $button['icon'] ?>"></i> <?php echo $name ?></a>
+                            <a href="<?php echo $button['link'] ?>" target="_blank" class="btn btn-color text-<?php echo $txtcolor ?>"><i class="<?php echo $button['icon'] ?>"></i> <?php echo $name ?></a>
                         <?php } ?>
                     </div>
                 </div>
