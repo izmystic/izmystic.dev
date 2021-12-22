@@ -33,6 +33,14 @@
         ],
     ];
 
+    // Discord Page (redirect)
+
+    // Long Name
+    $longname = "Mystic's Development Space";
+
+    // Discord Invite
+    $discord = "https://discord.gg/mbxTEAC74a";
+
     // Text Color
     if ($theme == "light"){
         $txtcolor = "dark";
