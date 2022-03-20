@@ -3,7 +3,7 @@
     $name = "izMystic";
 
     // Descripton
-    $desc = "Bot Developer | Software Developer | Graphic Designer";
+    $desc = "QBCore & FiveM Developer";
 
     // Theme (light or dark)
     $theme = "dark";
