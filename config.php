@@ -3,8 +3,8 @@
     $name = "izMystic";
 
     // Descripton
-    $desc = "QBCore & FiveM Developer";
-
+    $desc = "FiveM Developer | Website Designer";
+ 
     // Theme (light or dark)
     $theme = "dark";
 
