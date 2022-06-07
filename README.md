@@ -1,5 +1,5 @@
 # izmystic.dev
-Very ugly card site 
+A nice looking card site
 
 ## Preview
 Dark Mode
