@@ -1,12 +1,12 @@
 # izmystic.dev
-Very ugly card site 
+A nice looking card site
 
 ## Preview
 Dark Mode
-![](https://cdn.discordapp.com/attachments/817345362112151553/917241314704232499/unknown.png)
+![](https://cdn.izmystic.dev/images/dz0jx51m.png)
 
 Light Mode
-![](https://cdn.discordapp.com/attachments/817345362112151553/917241420312637460/unknown.png)
+![](https://cdn.izmystic.dev/images/6xqkm0ce.png)
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 International License][cc-by-nc-sa].
