@@ -3,7 +3,7 @@ A nice looking card site
 
 ## Preview
 Dark Mode
-![](https://cdn.izmystic.dev/images/dz0jx51m.png)
+![](https://cdn.izmystic.dev/images/46h2rs03.png)
 
 Light Mode
 ![](https://cdn.izmystic.dev/images/6xqkm0ce.png)
