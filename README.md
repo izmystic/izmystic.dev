@@ -3,10 +3,10 @@ A nice looking card site
 
 ## Preview
 Dark Mode
-![](https://cdn.izmystic.dev/images/46h2rs03.png)
+![](https://cdn.izmystic.dev/images/0c30tspx.png)
 
 Light Mode
-![](https://cdn.izmystic.dev/images/6xqkm0ce.png)
+![](https://cdn.izmystic.dev/images/eiuxvevr.png)
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 International License][cc-by-nc-sa].
