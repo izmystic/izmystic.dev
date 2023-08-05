@@ -36,45 +36,39 @@
   </script>
 </head>
 
-<body class="text-gray-900 dark:text-gray-100 font-sans antialiased leading-normal tracking-wider bg-no-repeat bg-cover bg-center bg-fixed" style="background-image:url('assets/img/background.jpg');">
+<body class="text-zinc-800 dark:text-white bg-white dark:bg-zinc-800 font-sans antialiased leading-normal tracking-wider">
   <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
-    <div id="profile" class="bg-white dark:bg-gray-900 w-full rounded-lg lg:rounded-l-lg shadow-2xl opacity-75 mx-6 lg:mx-0">
+    <div id="profile" class="bg-white dark:bg-zinc-900 w-full rounded-lg lg:rounded-l-lg shadow-2xl opacity-80 mx-6 lg:mx-0">
       <div class="p-4 md:p-12 text-center lg:text-left">
-        <div class="block rounded-full shadow-xl mx-auto -m-5 h-48 w-48 bg-cover bg-center" style="background-image: url('assets/img/logo.png')"></div>
+        <img class="block rounded-full shadow-xl mx-auto -m-5 h-48 w-48 bg-cover bg-center opacity-100" src='assets/img/logo.png'></img>
 
         <!-- name -->
-        <h1 class="text-3xl font-bold pt-8 lg:pt-0">izMystic</h1>
+        <h1 class="text-3xl font-bold pt-8 lg:pt-0">izmystic</h1>
 
         <!-- line -->
-        <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-pink-600"></div>
+        <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-red-600"></div>
         
         <!-- details -->
         <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
-          <i class="h-4 fill-current text-pink-600 pr-2 fa-solid fa-code"></i> FiveM Developer | Website Designer
+          <i class="h-4 fill-current text-red-600 pr-2 fa-solid fa-code"></i> Website Designer
         </p>
         <p class="pt-2 dark:text-gray-400 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
-          <i class="h-4 fill-current text-pink-600 pr-4 fa-solid fa-location-pin"></i> Michigan
+          <i class="h-4 fill-current text-red-600 pr-4 fa-solid fa-location-pin"></i> Michigan
         </p>
 
         <!-- buttons -->
         <div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
-          <a class="link" href="https://izmystic.dev/discord" target="_blank" data-tippy-content="Mystic's Development Space">
-            <i class="text-zinc dark:text-white-600 fill-current hover:text-pink-600 fa-brands fa-discord fa-xl"></i>
+          <a class="link" href="https://izmystic.dev/discord" target="_blank" data-tippy-content="izDevelopment">
+            <i class="fill-current hover:text-red-600 fa-brands fa-discord fa-xl"></i>
           </a>
           <a class="link" href="https://github.com/izMystic" target="_blank" data-tippy-content="izMystic">
-            <i class="text-zinc dark:text-white-600 fill-current hover:text-pink-600 fa-brands fa-github fa-xl"></i>
-          </a>
-          <a class="link" href="https://twitter.com/iz_mystic" target="_blank" data-tippy-content="iz_mystic">
-            <i class="text-zinc dark:text-white-600 fill-current hover:text-pink-600 fa-brands fa-twitter fa-xl"></i>
-          </a>
-          <a class="link" href="https://youtube.com/c/UCVtf_JzhPy4sIjrK4kSdPvg" target="_blank" data-tippy-content="izMystic">
-            <i class="text-zinc dark:text-white-600 fill-current hover:text-pink-600 fa-brands fa-youtube fa-xl"></i>
+            <i class="fill-current hover:text-red-600 fa-brands fa-github fa-xl"></i>
           </a>
           <a class="link" href="https://twitch.tv/iizMystic" target="_blank" data-tippy-content="iizMystic">
-            <i class="text-zinc dark:text-white-600 fill-current hover:text-pink-600 fa-brands fa-twitch fa-xl"></i>
+            <i class="fill-current hover:text-red-600 fa-brands fa-twitch fa-xl"></i>
           </a>
           <a class="link" href="https://www.instagram.com/iz.mystic" target="_blank" data-tippy-content="iz.mystic">
-            <i class="text-zinc dark:text-white-600 fill-current hover:text-pink-600 fa-brands fa-instagram fa-xl"></i>
+            <i class="fill-current hover:text-red-600 fa-brands fa-instagram fa-xl"></i>
           </a>
         </div>
 
@@ -82,8 +76,7 @@
     </div>
 
     <!-- theme changer -->
-    <button id="theme-toggle" type="button"
-      class="text-white-900 dark:text-white-900 rounded-lg text-sm p-2.5 absolute top-0 right-0 h-12 w-18 p-4">
+    <button id="theme-toggle" type="button" class="text-white-900 dark:text-white-900 rounded-lg text-sm p-2.5 absolute top-0 right-0 h-12 w-18 p-4">
       <i id="theme-toggle-dark-icon" class="hidden w-5 h-5 fa-solid fa-moon fa-xl"></i>
       <i id="theme-toggle-light-icon" class="hidden w-5 h-5 fa-solid fa-sun fa-xl"></i>
     </button>
