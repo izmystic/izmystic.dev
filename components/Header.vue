@@ -9,10 +9,6 @@ const links = [
     to: "#home",
   },
   {
-    label: "About",
-    to: "#about",
-  },
-  {
     label: "Services",
     to: "#services",
   },
@@ -25,11 +21,9 @@ const links = [
 
 <template>
   <UHeader :links="links">
-    <template #left> </template>
+    <template #left> ‎</template>
 
-    <template #right>
-      <UColorModeButton />
-    </template>
+    <template #right> </template>
 
     <template #panel>
       <UNavigationTree :links="mapContentNavigation(navigation)" />
