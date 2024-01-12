@@ -12,10 +12,12 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/heroicons": "^1.1.16",
     "@iconify-json/simple-icons": "^1.1.84",
     "@nuxt/ui-pro": "^0.6.1",
-    "nuxt": "^3.8.2"
+    "autoprefixer": "^10.4.16",
+    "nuxt": "^3.8.2",
+    "postcss": "^8.4.33",
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.5",
