@@ -3,12 +3,10 @@ A nice looking card site
 
 ## Preview
 Dark Mode
-![image](https://github.com/izmystic/izmystic.dev/assets/72127044/738386f6-9fa2-44a1-afe6-90bce1ad1ef4)
-
+![image](https://github.com/izmystic/izmystic.dev/assets/72127044/74d91792-b13b-4fcf-a180-2f72150e6e38)
 
 Light Mode
-![image](https://github.com/izmystic/izmystic.dev/assets/72127044/1a33ecfb-d5b4-46c7-b8c8-e648a1b5a6a9)
-
+![image](https://github.com/izmystic/izmystic.dev/assets/72127044/e08f9c91-be74-40c3-b616-63df76af5493)
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 International License][cc-by-nc-sa].
