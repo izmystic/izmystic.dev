@@ -1,0 +1,18 @@
+header:
+  title: izmystic
+  description: Website Designer | Graphic Designer
+  align: left
+  image: https://github.com/izmystic.png
+  links:
+    - label: GitHub
+      icon: i-simple-icons-github
+      to: https://github.com/izmystic
+      target: _blank
+    - label: Discord
+      icon: i-simple-icons-discord
+      to: https://discord.gg/gWNKcSkCVP
+      target: _blank
+    - label: YouTube
+      icon: i-simple-icons-youtube
+      to: https://www.youtube.com/@iz.Mystic
+      target: _blank
