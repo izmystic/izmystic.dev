@@ -1,5 +1,5 @@
 # izmystic.dev
-A nice looking card site
+wip portfolio site
 
 ## Preview
 Dark Mode
