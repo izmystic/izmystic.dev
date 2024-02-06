@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   ui: {
     icons: ["heroicons", "simple-icons"],
   },
+  colorMode: {
+    preference: 'dark'
+  },
   devtools: { enabled: false },
   typescript: { strict: false },
 });

@@ -26,11 +26,11 @@ defineOgImageComponent("NuxtSeo", {
 <template>
   <Header />
 
-  <!-- <NuxtLayout> -->
-    <UMain>
+  <UMain>
+    <NuxtLayout>
       <NuxtPage />
-    </UMain>
-  <!-- </NuxtLayout> -->
+    </NuxtLayout>
+  </UMain>
 
   <Footer />
 </template>

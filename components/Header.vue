@@ -22,6 +22,6 @@ const links = [
 
 <template>
   <UHeader :links="links">
-    <template #left> ‎</template>
+    <template #left>‎</template>
   </UHeader>
 </template>
