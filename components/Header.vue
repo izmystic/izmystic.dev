@@ -23,5 +23,7 @@ const links = [
 <template>
   <UHeader :links="links">
     <template #left>‎</template>
+    <template #panel>
+      <UDashboardSidebarLinks :links="links" />
   </UHeader>
 </template>
