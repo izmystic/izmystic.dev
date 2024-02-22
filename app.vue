@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData("index", () => queryContent("/").findOne());
+const { data: page } = await useAsyncData(() => queryContent("/").findOne());
 useHead({
   meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
   link: [{ rel: "icon", href: "https://avatars.githubusercontent.com/u/72127044?v=4" }],
@@ -8,18 +8,18 @@ useHead({
   },
 });
 
-useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description,
-});
-
 defineOgImageComponent("NuxtSeo", {
   title: page.value.title,
   description: page.value.description,
   theme: "#ff0000",
   colorMode: "dark",
+});
+
+useSeoMeta({
+  titleTemplate: `%s - izmystic`,
+  description: "Website Designer | Graphic Designer",
+  ogTitle: "%s - izmystic",
+  ogDescription: "Website Designer | Graphic Designer",
 });
 </script>
 

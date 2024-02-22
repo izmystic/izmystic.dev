@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   extends: ["@nuxt/ui-pro"],
-  modules: ["@nuxt/content", "@nuxt/ui", "@nuxt/image", "nuxt-og-image"],
+  modules: ["@nuxt/content", "@nuxt/ui", "@nuxt/image", "nuxt-og-image", "nuxt-aos"],
   ui: {
     icons: ["heroicons", "simple-icons"],
   },

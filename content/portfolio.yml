@@ -1,0 +1,15 @@
+header:
+  title: Portfolio
+  description: All the projects I've worked on.
+  icon: i-heroicons-folder
+projects:
+  - title: zilobot.xyz
+    description: website for my discord bot
+    to: https://zilobot.xyz
+    img: zilobot.png
+    align: left
+  - title: greatlakescwc.com
+    description: website for my discord bot
+    to: https://greatlakescwc.com
+    img: https://picsum.photos/640/360?grayscale
+    align: right
