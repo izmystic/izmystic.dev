@@ -11,5 +11,5 @@ projects:
   - title: greatlakescwc.com
     description: website for my discord bot
     to: https://greatlakescwc.com
-    img: https://picsum.photos/640/360?grayscale
+    img: glcwc.png
     align: right
