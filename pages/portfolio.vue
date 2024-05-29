@@ -10,7 +10,7 @@ useSeoMeta({
     <UContainer>
       <UPageHeader v-bind="page?.header" />
       <UPageBody>
-        <ULandingSection v-for="(project, index) in page?.projects" :key="index" v-bind="project" :data-aos="'fade-' + project.align" :align="project.align">
+        <ULandingSection v-for="(project, index) in page?.projects" :key="index" v-bind="project" :data-aos="'fade-' + project.align" :align="project.align" :to="project.title">
           <NuxtImg :src="project.img" class="w-full rounded-md" />
         </ULandingSection>
       </UPageBody>
