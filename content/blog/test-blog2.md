@@ -1,5 +1,5 @@
 ---
-title: 'test blog 2'
+title: "test blog 2"
 description: "lorem ipsum text stuff ig"
 image:
   src: https://picsum.photos/1920/1080.webp
