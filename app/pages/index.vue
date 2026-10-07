@@ -331,7 +331,7 @@ const eventColors: Record<string, string> = {
 
         <TuiPanel title="steam" :active="nav.isFocused('steam')">
             <template v-if="steam">
-                <p>
+                <p class="flex flex-wrap gap-x-2">
                     <span
                         :class="steamStateColors[steam.state] ?? 'text-yellow'"
                         >{{ steam.state === "offline" ? "○" : "●" }}

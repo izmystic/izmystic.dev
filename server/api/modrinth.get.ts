@@ -24,8 +24,8 @@ interface ModrinthVersion {
 }
 
 export default defineCachedEventHandler(
-  async () => {
-    const { modrinthUser } = useRuntimeConfig();
+  async (event) => {
+    const { modrinthUser } = useRuntimeConfig(event);
     // Modrinth asks API clients to identify themselves with a descriptive User-Agent
     const api = <T>(path: string) =>
       $fetch<T>(path, {
