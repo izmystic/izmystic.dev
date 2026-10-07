@@ -1,18 +1,53 @@
 # izmystic.dev
-wip portfolio site
 
-## Preview
-Dark Mode
-![image](https://github.com/izmystic/izmystic.dev/assets/72127044/1076dd0e-c114-401f-987e-ebc19a878230)
+My personal site, built to look and feel like a terminal app: btop-style panels, htop-style tables, keyboard navigation and 112 terminal color themes.
 
-Light Mode
-![image](https://github.com/izmystic/izmystic.dev/assets/72127044/2f27fec1-d00d-40dd-a8bc-0e0c015942df)
+![izmystic.dev home page](.github/preview.png)
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-International License][cc-by-nc-sa].
+## Features
 
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+- **Live dashboard** with GitHub stats, languages, repos and activity, Modrinth projects, and Steam playtime plus what I'm playing right now
+- **Portfolio and blog** written in Markdown and YAML with Nuxt Content
+- **Keyboard driven**: `1` `2` `3` switch pages, `tab` moves between panels, `j`/`k` move, `⏎` opens, `t` picks a theme
+- **Every theme from [terminalcolors.com](https://terminalcolors.com/)**, remembered per visitor and rendered on the server with no flash
+- **Generated share cards** that match the site's default theme
 
-[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+## Stack
+
+[Nuxt 4](https://nuxt.com) · [Nuxt Content](https://content.nuxt.com) · [Tailwind CSS 4](https://tailwindcss.com) · [nuxt-og-image](https://nuxtseo.com/og-image) · [Bun](https://bun.sh) · hosted on [Cloudflare Pages](https://pages.cloudflare.com)
+
+## Development
+
+```bash
+bun install
+bun run dev
+```
+
+Copy your keys into a `.env` file in the project root:
+
+```bash
+NUXT_STEAM_API_KEY=   # required for the Steam panels, from https://steamcommunity.com/dev/apikey
+NUXT_GITHUB_TOKEN=    # optional, raises the GitHub API rate limit; needs no permissions
+```
+
+## Making it yours
+
+| What | Where |
+| --- | --- |
+| Name, role, avatar and links | `content/index.yml` |
+| Portfolio projects | `content/portfolio.yml` (screenshots go in `public/`) |
+| Blog posts | `content/blog/*.md` |
+| Default theme | `defaultTheme` in `app/app.config.ts`, any id from `app/utils/themes.ts` |
+| GitHub, Modrinth and Steam accounts | `runtimeConfig` in `nuxt.config.ts` |
+
+## Deploying to Cloudflare Pages
+
+- **Build command:** `bun install --frozen-lockfile && bun run build`
+- **Build output directory:** `dist`
+- **Variables:** `SKIP_DEPENDENCY_INSTALL=1`, `BUN_VERSION=1.4.2`, plus the keys above as secrets. `NUXT_OG_IMAGE_SECRET` is optional.
+- **Bindings:** a D1 database bound as `DB`, which Nuxt Content fills on first request
+- **Runtime:** compatibility flag `nodejs_compat`
+
+## License
+
+[AGPL-3.0](LICENSE)

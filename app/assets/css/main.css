@@ -3,7 +3,7 @@
 @theme {
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-    /* GitHub Dark; useTheme overrides these on <html> for the selected theme */
+    /* Placeholders so Tailwind generates the color utilities; useTheme always sets the real values on <html>. Change the default theme in app.config.ts */
     --color-bg: #010409;
     --color-fg: #e6edf3;
     --color-accent: #ff7b72;
