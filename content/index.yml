@@ -5,14 +5,14 @@ header:
   image: https://github.com/izmystic.png
   links:
     - label: GitHub
-      icon: i-simple-icons-github
       to: https://github.com/izmystic
       target: _blank
-    - label: Discord
-      icon: i-simple-icons-discord
-      to: https://discord.gg/gWNKcSkCVP
+    - label: Modrinth
+      to: https://modrinth.com/user/mystic
+      target: _blank
+    - label: Steam
+      to: https://steamcommunity.com/profiles/76561199516407748
       target: _blank
     - label: YouTube
-      icon: i-simple-icons-youtube
       to: https://www.youtube.com/@iz.Mystic
       target: _blank

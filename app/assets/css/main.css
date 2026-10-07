@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    /* GitHub Dark; useTheme overrides these on <html> for the selected theme */
+    --color-bg: #010409;
+    --color-fg: #e6edf3;
+    --color-accent: #ff7b72;
+    --color-green: #3fb950;
+    --color-yellow: #d29922;
+    --color-magenta: #bc8cff;
+    --color-cyan: #39c5cf;
+
+    /* Terminal themes' "black" slots are unreliable (some equal the background), so muted shades are mixed from fg/bg instead */
+    --color-dim: color-mix(in oklab, var(--color-fg) 55%, var(--color-bg));
+    --color-line: color-mix(in oklab, var(--color-fg) 22%, var(--color-bg));
+}
+
+@layer base {
+    html {
+        @apply bg-bg text-fg font-mono text-sm;
+    }
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-line) transparent;
+    }
+
+    option,
+    optgroup {
+        @apply bg-bg text-fg;
+    }
+
+    ::selection {
+        @apply bg-accent text-bg;
+    }
+
+    :focus-visible {
+        @apply outline-1 outline-offset-2 outline-cyan;
+    }
+}
+
+@layer components {
+    .tui-prose {
+        @apply leading-relaxed;
+
+        & > * + * {
+            @apply mt-4;
+        }
+
+        & > :first-child {
+            @apply mt-0;
+        }
+
+        & :is(h1, h2, h3, h4) {
+            @apply mt-8 font-bold text-fg;
+
+            & a {
+                @apply text-inherit no-underline;
+            }
+        }
+
+        & h1::before {
+            content: "# ";
+            @apply text-accent;
+        }
+
+        & h2::before {
+            content: "## ";
+            @apply text-accent;
+        }
+
+        & h3::before {
+            content: "### ";
+            @apply text-accent;
+        }
+
+        & h4::before {
+            content: "#### ";
+            @apply text-accent;
+        }
+
+        & a {
+            @apply text-cyan underline underline-offset-2;
+        }
+
+        & strong {
+            @apply text-yellow;
+        }
+
+        & ul > li::before {
+            content: "- ";
+            @apply text-accent;
+        }
+
+        & ol {
+            @apply list-decimal pl-6 marker:text-accent;
+        }
+
+        & blockquote {
+            @apply border-l border-line pl-3 text-dim;
+        }
+
+        & :not(pre) > code {
+            @apply text-green;
+        }
+
+        & pre {
+            @apply overflow-x-auto border border-line p-3;
+        }
+
+        & hr {
+            @apply border-line;
+        }
+
+        & img {
+            @apply border border-line;
+        }
+    }
+}
