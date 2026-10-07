@@ -30,15 +30,24 @@ export default defineCachedEventHandler(
     const api = <T>(path: string) =>
       $fetch<T>(path, {
         baseURL: "https://api.modrinth.com/v2",
-        headers: { "User-Agent": "izmystic/izmystic.dev (https://izmystic.dev)" },
+        headers: {
+          "User-Agent": "izmystic/izmystic.dev (https://izmystic.dev)",
+        },
       });
 
-    const [user, allProjects] = await Promise.all([api<ModrinthUser>(`/user/${modrinthUser}`), api<ModrinthProject[]>(`/user/${modrinthUser}/projects`)]);
-    const projects = allProjects.filter((project) => project.status === "approved").sort((a, b) => b.downloads - a.downloads);
+    const [user, allProjects] = await Promise.all([
+      api<ModrinthUser>(`/user/${modrinthUser}`),
+      api<ModrinthProject[]>(`/user/${modrinthUser}/projects`),
+    ]);
+    const projects = allProjects
+      .filter((project) => project.status === "approved")
+      .sort((a, b) => b.downloads - a.downloads);
 
     const latestVersions: (ModrinthVersion | null)[] = await Promise.all(
       projects.map((project) =>
-        api<ModrinthVersion[]>(`/project/${project.id}/version?include_changelog=false`)
+        api<ModrinthVersion[]>(
+          `/project/${project.id}/version?include_changelog=false`,
+        )
           .then((versions) => versions[0] ?? null)
           .catch(() => null),
       ),

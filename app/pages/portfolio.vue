@@ -3,7 +3,7 @@ const { data: page } = await useAsyncData(() =>
     queryCollection("portfolio").first(),
 );
 useSeoMeta({
-    title: "Portfolio",
+    title: "portfolio",
 });
 
 const projects = computed(() => page.value?.projects ?? []);

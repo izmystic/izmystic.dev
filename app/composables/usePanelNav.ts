@@ -20,7 +20,11 @@ export function usePanelNav(panels: () => NavPanel[]) {
   }
 
   function revealSelection() {
-    nextTick(() => document.querySelector("[data-nav-selected]")?.scrollIntoView({ block: "nearest" }));
+    nextTick(() =>
+      document
+        .querySelector("[data-nav-selected]")
+        ?.scrollIntoView({ block: "nearest" }),
+    );
   }
 
   function cycle(step: number) {
@@ -40,8 +44,18 @@ export function usePanelNav(panels: () => NavPanel[]) {
   }
 
   useHotkeys([
-    { keys: ["Tab"], hint: "tab", label: "focus", run: (event) => cycle(event.shiftKey ? -1 : 1) },
-    { keys: ["j", "ArrowDown"], hint: "j/k", label: "move", run: () => move(1) },
+    {
+      keys: ["Tab"],
+      hint: "tab",
+      label: "focus",
+      run: (event) => cycle(event.shiftKey ? -1 : 1),
+    },
+    {
+      keys: ["j", "ArrowDown"],
+      hint: "j/k",
+      label: "move",
+      run: () => move(1),
+    },
     { keys: ["k", "ArrowUp"], run: () => move(-1) },
     {
       keys: ["Enter", "o"],

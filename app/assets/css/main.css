@@ -110,6 +110,18 @@
             @apply overflow-x-auto border border-line p-3;
         }
 
+        & table {
+            @apply w-full border-collapse;
+        }
+
+        & th {
+            @apply bg-green px-2 text-left font-bold text-bg;
+        }
+
+        & td {
+            @apply border-b border-line px-2 align-top;
+        }
+
         & hr {
             @apply border-line;
         }
