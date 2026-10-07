@@ -1,6 +1,5 @@
-export const DEFAULT_THEME = "github-dark";
-
 type Theme = (typeof themes)[number];
+export type ThemeId = Theme["id"];
 
 function isLight(hex: string) {
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
@@ -8,8 +7,9 @@ function isLight(hex: string) {
 }
 
 export function useTheme() {
+  const { defaultTheme } = useAppConfig();
   const themeId = useCookie<string>("theme", {
-    default: () => DEFAULT_THEME,
+    default: () => defaultTheme,
     maxAge: 60 * 60 * 24 * 365,
     sameSite: "lax",
   });
@@ -17,7 +17,8 @@ export function useTheme() {
   const theme = computed<Theme>(
     () =>
       themes.find((t) => t.id === themeId.value) ??
-      themes.find((t) => t.id === DEFAULT_THEME),
+      themes.find((t) => t.id === defaultTheme) ??
+      themes[0],
   );
 
   return { themeId, theme };
