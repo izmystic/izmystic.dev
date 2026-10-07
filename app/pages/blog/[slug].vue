@@ -50,18 +50,18 @@ if (post.value.image?.src) {
 
 const [prev, next] = [surround.value?.[0], surround.value?.[1]];
 const toc = computed(() => post.value.body?.toc?.links ?? []);
+// Tree lines are drawn with borders rather than box-drawing characters so they stay continuous across line-height gaps and wrapped headings
 const tocRows = computed(() =>
     toc.value.flatMap((link, index) => {
         const isLast = index === toc.value.length - 1;
         const children = link.children ?? [];
         return [
-            { id: link.id, text: link.text, prefix: isLast ? "└─ " : "├─ " },
+            { id: link.id, text: link.text, trunks: [], isLast },
             ...children.map((child, childIndex) => ({
                 id: child.id,
                 text: child.text,
-                prefix:
-                    (isLast ? "   " : "│  ") +
-                    (childIndex === children.length - 1 ? "└─ " : "├─ "),
+                trunks: [!isLast],
+                isLast: childIndex === children.length - 1,
             })),
         ];
     }),
@@ -120,9 +120,25 @@ useHotkeys([
                 <ul>
                     <li v-for="row in tocRows" :key="row.id">
                         <a :href="`#${row.id}`" class="flex hover:text-cyan">
-                            <span class="shrink-0 whitespace-pre text-dim">{{
-                                row.prefix
-                            }}</span>
+                            <span
+                                v-for="(hasTrunk, level) in row.trunks"
+                                :key="level"
+                                class="relative w-[3ch] shrink-0"
+                            >
+                                <span
+                                    v-if="hasTrunk"
+                                    class="absolute inset-y-0 left-[0.5ch] border-l border-dim"
+                                />
+                            </span>
+                            <span class="relative w-[3ch] shrink-0">
+                                <span
+                                    class="absolute top-0 left-[0.5ch] border-l border-dim"
+                                    :class="row.isLast ? 'h-[0.5lh]' : 'h-full'"
+                                />
+                                <span
+                                    class="absolute top-[0.5lh] left-[0.5ch] w-[2ch] border-t border-dim"
+                                />
+                            </span>
                             <span>{{ row.text }}</span>
                         </a>
                     </li>
