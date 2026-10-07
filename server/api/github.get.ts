@@ -47,8 +47,9 @@ function describeEvent(event: GitHubEvent) {
 }
 
 export default defineCachedEventHandler(
-  async () => {
-    const { githubUser, githubToken } = useRuntimeConfig();
+  async (event) => {
+    // On Cloudflare, env vars are only bound per request, so the config must be read through the event
+    const { githubUser, githubToken } = useRuntimeConfig(event);
     const headers = {
       Accept: "application/vnd.github+json",
       // GitHub rejects requests without a User-Agent, and Cloudflare's fetch doesn't send one by default

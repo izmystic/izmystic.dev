@@ -21,9 +21,9 @@ defineOgImage("Site", {
 
 useSeoMeta({
     titleTemplate: `%s - izmystic`,
-    description: "Website Designer | Graphic Designer",
+    description: page.value?.header.description,
     ogTitle: "%s - izmystic",
-    ogDescription: "Website Designer | Graphic Designer",
+    ogDescription: page.value?.header.description,
 });
 </script>
 
