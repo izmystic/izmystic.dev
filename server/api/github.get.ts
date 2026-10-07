@@ -40,8 +40,10 @@ const EVENT_LABELS: Record<string, string> = {
 
 function describeEvent(event: GitHubEvent) {
   const { payload } = event;
-  if (event.type === "PushEvent") return payload.ref?.replace("refs/heads/", "") ?? "";
-  if (event.type === "CreateEvent" || event.type === "DeleteEvent") return [payload.ref_type, payload.ref].filter(Boolean).join(" ");
+  if (event.type === "PushEvent")
+    return payload.ref?.replace("refs/heads/", "") ?? "";
+  if (event.type === "CreateEvent" || event.type === "DeleteEvent")
+    return [payload.ref_type, payload.ref].filter(Boolean).join(" ");
   if (event.type === "WatchEvent" || event.type === "ForkEvent") return "";
   return payload.action ?? "";
 }
@@ -56,7 +58,8 @@ export default defineCachedEventHandler(
       "User-Agent": "izmystic/izmystic.dev (https://izmystic.dev)",
       ...(githubToken ? { Authorization: `Bearer ${githubToken}` } : {}),
     };
-    const api = <T>(path: string) => $fetch<T>(path, { baseURL: "https://api.github.com", headers });
+    const api = <T>(path: string) =>
+      $fetch<T>(path, { baseURL: "https://api.github.com", headers });
 
     const [user, repos, events] = await Promise.all([
       api<GitHubUser>(`/users/${githubUser}`),
@@ -68,21 +71,41 @@ export default defineCachedEventHandler(
 
     const languageCounts = new Map<string, number>();
     for (const repo of own) {
-      if (repo.language) languageCounts.set(repo.language, (languageCounts.get(repo.language) ?? 0) + 1);
+      if (repo.language)
+        languageCounts.set(
+          repo.language,
+          (languageCounts.get(repo.language) ?? 0) + 1,
+        );
     }
 
     // The events feed isn't strictly chronological
-    const activity: { type: string; repo: string; detail: string; date: string; count: number }[] = [];
-    for (const event of events.toSorted((a, b) => b.created_at.localeCompare(a.created_at))) {
+    const activity: {
+      type: string;
+      repo: string;
+      detail: string;
+      date: string;
+      count: number;
+    }[] = [];
+    for (const event of events.toSorted((a, b) =>
+      b.created_at.localeCompare(a.created_at),
+    )) {
       const entry = {
-        type: EVENT_LABELS[event.type] ?? event.type.replace(/Event$/, "").toLowerCase(),
+        type:
+          EVENT_LABELS[event.type] ??
+          event.type.replace(/Event$/, "").toLowerCase(),
         repo: event.repo.name,
         detail: describeEvent(event),
         date: event.created_at,
         count: 1,
       };
       const last = activity.at(-1);
-      if (last && last.type === entry.type && last.repo === entry.repo && last.detail === entry.detail) last.count++;
+      if (
+        last &&
+        last.type === entry.type &&
+        last.repo === entry.repo &&
+        last.detail === entry.detail
+      )
+        last.count++;
       else activity.push(entry);
     }
 
@@ -94,7 +117,9 @@ export default defineCachedEventHandler(
       following: user.following,
       stars: own.reduce((sum, repo) => sum + repo.stargazers_count, 0),
       joined: user.created_at,
-      languages: [...languageCounts].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count),
+      languages: [...languageCounts]
+        .map(([name, count]) => ({ name, count }))
+        .sort((a, b) => b.count - a.count),
       recentRepos: own.slice(0, 6).map((repo) => ({
         name: repo.name,
         url: repo.html_url,

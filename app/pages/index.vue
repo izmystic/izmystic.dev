@@ -21,7 +21,7 @@ onMounted(() => (steamTimer = setInterval(refreshSteam, 60_000)));
 onBeforeUnmount(() => clearInterval(steamTimer));
 
 useSeoMeta({
-    title: "Home",
+    title: "home",
 });
 
 const openExternal = (url: string) => window.open(url, "_blank", "noopener");
@@ -79,7 +79,13 @@ const swatches = [
 ];
 
 const BAR_WIDTH = 16;
-const barColors = ["text-green", "text-cyan", "text-yellow", "text-magenta", "text-accent"];
+const barColors = [
+    "text-green",
+    "text-cyan",
+    "text-yellow",
+    "text-magenta",
+    "text-accent",
+];
 
 function toBars<T>(items: T[], value: (item: T) => number) {
     const max = Math.max(...items.map(value), 1);
@@ -221,9 +227,7 @@ const eventColors: Record<string, string> = {
                                 language.empty
                             }}</span></span
                         >
-                        <span class="text-dim"
-                            >{{ language.count }} repos</span
-                        >
+                        <span class="text-dim">{{ language.count }} repos</span>
                     </li>
                 </ul>
             </template>
@@ -293,7 +297,8 @@ const eventColors: Record<string, string> = {
                             </p>
                             <p class="mt-1 flex flex-wrap gap-x-3">
                                 <span class="text-yellow"
-                                    >↓ {{ formatCount(project.downloads) }}</span
+                                    >↓
+                                    {{ formatCount(project.downloads) }}</span
                                 >
                                 <span class="text-accent"
                                     >♥ {{ project.followers }}</span
@@ -341,7 +346,9 @@ const eventColors: Record<string, string> = {
                         {{ steam.playing.name }}</span
                     >
                     <span
-                        v-else-if="steam.state === 'offline' && steam.lastOnline"
+                        v-else-if="
+                            steam.state === 'offline' && steam.lastOnline
+                        "
                         class="text-dim"
                     >
                         · last online {{ formatDate(steam.lastOnline) }}</span
@@ -368,7 +375,10 @@ const eventColors: Record<string, string> = {
                             rel="noopener"
                             class="-mx-1 grid grid-cols-[minmax(0,14rem)_auto_1fr] gap-x-3 px-1"
                             :class="{
-                                'bg-cyan text-bg': nav.isSelected('steam', index),
+                                'bg-cyan text-bg': nav.isSelected(
+                                    'steam',
+                                    index,
+                                ),
                             }"
                             :data-nav-selected="
                                 nav.isSelected('steam', index) || undefined
@@ -473,11 +483,7 @@ const eventColors: Record<string, string> = {
             <p v-else class="mt-2 text-dim">nothing played recently</p>
         </TuiPanel>
 
-        <TuiPanel
-            v-if="github"
-            title="repos"
-            :active="nav.isFocused('repos')"
-        >
+        <TuiPanel v-if="github" title="repos" :active="nav.isFocused('repos')">
             <div
                 class="-mx-3 grid grid-cols-[1fr_6rem_3rem] gap-x-3 bg-green px-4 font-bold text-bg sm:grid-cols-[1fr_6rem_3rem_6rem]"
             >
@@ -487,10 +493,7 @@ const eventColors: Record<string, string> = {
                 <span class="hidden sm:block">PUSHED</span>
             </div>
             <ul class="-mx-3">
-                <li
-                    v-for="(repo, index) in github.recentRepos"
-                    :key="repo.url"
-                >
+                <li v-for="(repo, index) in github.recentRepos" :key="repo.url">
                     <a
                         :href="repo.url"
                         target="_blank"
@@ -527,9 +530,7 @@ const eventColors: Record<string, string> = {
                         <span
                             class="hidden sm:block"
                             :class="
-                                nav.isSelected('repos', index)
-                                    ? ''
-                                    : 'text-dim'
+                                nav.isSelected('repos', index) ? '' : 'text-dim'
                             "
                             >{{ formatDate(repo.pushed) }}</span
                         >
@@ -554,7 +555,10 @@ const eventColors: Record<string, string> = {
                         rel="noopener"
                         class="-mx-1 flex gap-3 px-1"
                         :class="{
-                            'bg-cyan text-bg': nav.isSelected('activity', index),
+                            'bg-cyan text-bg': nav.isSelected(
+                                'activity',
+                                index,
+                            ),
                         }"
                         :data-nav-selected="
                             nav.isSelected('activity', index) || undefined

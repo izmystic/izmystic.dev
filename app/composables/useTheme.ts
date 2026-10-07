@@ -31,7 +31,8 @@ export function useThemeStyle() {
   useHead({
     htmlAttrs: {
       style: computed(() => {
-        const { bg, fg, red, green, yellow, magenta, cyan } = theme.value.colors;
+        const { bg, fg, red, green, yellow, magenta, cyan } =
+          theme.value.colors;
         return [
           `--color-bg: ${bg}`,
           `--color-fg: ${fg}`,

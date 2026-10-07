@@ -16,7 +16,10 @@ export function displayUrl(url: string) {
   return url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 }
 
-const compactNumber = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
+const compactNumber = new Intl.NumberFormat("en", {
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
 
 export function formatCount(value: number) {
   return compactNumber.format(value).toLowerCase();
@@ -25,5 +28,7 @@ export function formatCount(value: number) {
 export function formatPlaytime(minutes: number) {
   if (minutes < 60) return `${minutes}m`;
   const hours = minutes / 60;
-  return hours < 100 ? `${hours.toFixed(1)}h` : `${Math.round(hours).toLocaleString("en")}h`;
+  return hours < 100
+    ? `${hours.toFixed(1)}h`
+    : `${Math.round(hours).toLocaleString("en")}h`;
 }
