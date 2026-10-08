@@ -142,6 +142,13 @@ Keep Steam running on Linux, and launch FiveM from Lutris **without** opening th
 
 - **Windowed mode:** FiveM keeps its own copy of the game settings in `drive_c/users/steamuser/AppData/Roaming/CitizenFX/gta5_settings.xml`. Set `<Windowed value="1" />` and the window size with `ScreenWidth`/`ScreenHeight`.
 - **Gamescope:** on KDE Plasma (Wayland), gamescope's default Wayland backend crashed for me after a while, taking the game with it. `--backend sdl` avoids that.
+- **ReShade (and graphics mods built on it, like NVE):** ReShade compiles its shaders with `d3dcompiler_47.dll`. Proton only ships Wine's built-in replacement, which can't compile everything yet. NVE's shaders fail with _"E5017: Aborting due to not yet implemented feature: Unhandled attribute 'fastopt'"_. Install Microsoft's compiler into the prefix (FiveM must be closed). For the Steam route:
+
+```bash
+protontricks 271590 -q d3dcompiler_47
+```
+
+My Lutris prefix already had Microsoft's compiler, from setting up the Rockstar launcher. If yours doesn't, `winetricks -q d3dcompiler_47` with `WINEPREFIX` set to the prefix should do the same.
 
 ## Letting Linux players join your server
 
